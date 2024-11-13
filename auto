@@ -9,7 +9,7 @@ from os.path import dirname, basename
 import win32gui # type: ignore # pylint: disable=import-error
 import pyautogui # type: ignore # pylint: disable=import-error
 
-
+# log settings
 APP_TMT = 60
 LOG_START_TIME = re.sub(r"\W+", "_", str(time.ctime()))
 
