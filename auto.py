@@ -37,7 +37,7 @@ logging.basicConfig(format=LOG_FMT_STRING,
                     handlers=[logging.FileHandler(LOG_FILENAME),
                               logging.StreamHandler()])
                               
-PASA = ""
+INPUT = ""
 TMT = 3
 
 class WindowMgr:
@@ -72,7 +72,7 @@ while True:
         w.find_window_wildcard(".*Window name.*")
         w.set_foreground()
         time.sleep(TMT)
-        pyautogui.write(PASA)
+        pyautogui.write(INPUT)
         pyautogui.press('enter')
         sys.exit()
     except Exception as ex: # pylint: disable=broad-exception-caught
