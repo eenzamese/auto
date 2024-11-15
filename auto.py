@@ -2,10 +2,10 @@
 import time
 import re
 import sys
-import os
 import logging
 from os import sep
-from os.path import dirname, basename
+import pathlib
+from os.path import dirname
 import win32gui # type: ignore # pylint: disable=import-error
 import pyautogui # type: ignore # pylint: disable=import-error
 
