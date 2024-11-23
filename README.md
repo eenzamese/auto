@@ -10,14 +10,21 @@ Enter needed values to only-gui legacy app with python
 
 ## Installation
 
-2. Clone the repo
+Clone the repo
    ```sh
    git clone https://github.com/eenzamese/auto.git
    ```
 
 ## Usage
 
-Clone the repo
+Edit inputs in auto.py
+```py
+# inputs
+WINDOW_TITLE_RGX = ".*Window name.*"
+INPUT = "some input string"
+```
+
+Run python script
    ```sh
    python3 auto/auto.py
    ```
