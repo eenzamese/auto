@@ -43,7 +43,7 @@ logging.basicConfig(format=LOG_FMT_STRING,
 
 
 # windows processing class
-# thanks luc from stackoverflow.com/users/117092/luc
+# thanks luc from stackoverflow (stackoverflow.com/users/117092/luc)
 class WindowMgr:
     """Encapsulates some calls to the winapi for window management"""
 
