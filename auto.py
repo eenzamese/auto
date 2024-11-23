@@ -41,6 +41,7 @@ logging.basicConfig(format=LOG_FMT_STRING,
                               logging.StreamHandler()])
 
 
+# windows processing class
 class WindowMgr:
     """Encapsulates some calls to the winapi for window management"""
 
