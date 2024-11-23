@@ -10,8 +10,11 @@ import win32gui # type: ignore # pylint: disable=import-error
 import pyautogui # type: ignore # pylint: disable=import-error
 
 APP_TMT = 60
-LOG_START_TIME = re.sub(r"\W+", "_", str(time.ctime()))
+INPUT = ""
+TMT = 3
 
+# logging parameters
+LOG_START_TIME = re.sub(r"\W+", "_", str(time.ctime()))
 LOG_FMT_STRING = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 
 if getattr(sys, 'frozen', False):
@@ -36,9 +39,7 @@ logging.basicConfig(format=LOG_FMT_STRING,
                     level=logging.INFO, # NOTSET/DEBUG/INFO/WARNING/ERROR/CRITICAL
                     handlers=[logging.FileHandler(LOG_FILENAME),
                               logging.StreamHandler()])
-                              
-INPUT = ""
-TMT = 3
+
 
 class WindowMgr:
     """Encapsulates some calls to the winapi for window management"""
