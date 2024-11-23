@@ -11,7 +11,7 @@ import pyautogui # type: ignore # pylint: disable=import-error
 
 APP_TMT = 60
 INPUT = ""
-TMT = 3
+SEARCH_TMT = 3
 
 # logging parameters
 LOG_START_TIME = re.sub(r"\W+", "_", str(time.ctime()))
@@ -42,6 +42,7 @@ logging.basicConfig(format=LOG_FMT_STRING,
 
 
 # windows processing class
+# thanks luc from stackoverflow.com/users/117092/luc
 class WindowMgr:
     """Encapsulates some calls to the winapi for window management"""
 
@@ -78,5 +79,5 @@ while True:
         pyautogui.press('enter')
         sys.exit()
     except Exception as ex: # pylint: disable=broad-exception-caught
-        print(str(ex))
-        time.sleep(TMT)
+        logger.warning('Window processing return exception - %s', str(ex))
+        time.sleep(SEARCH_TMT)
