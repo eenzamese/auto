@@ -9,10 +9,14 @@ from os.path import dirname
 import win32gui # type: ignore # pylint: disable=import-error
 import pyautogui # type: ignore # pylint: disable=import-error
 
-APP_TMT = 60
-INPUT = "some input string"
-SEARCH_TMT = 3
+# inputs
 WINDOW_TITLE_RGX = ".*Window name.*"
+INPUT = "some input string"
+
+
+SEARCH_TMT = 3
+APP_TMT = 60
+
 
 # logging parameters
 LOG_START_TIME = re.sub(r"\W+", "_", str(time.ctime()))
