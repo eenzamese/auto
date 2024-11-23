@@ -1,5 +1,5 @@
 <br />
-<div align="center"><h1 align="left">Additional bin files</h1></div>
+<div align="center"><h1 align="left">GUI auto input app</h1></div>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
