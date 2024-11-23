@@ -10,7 +10,7 @@ import win32gui # type: ignore # pylint: disable=import-error
 import pyautogui # type: ignore # pylint: disable=import-error
 
 APP_TMT = 60
-INPUT = ""
+INPUT = "some input string"
 SEARCH_TMT = 3
 WINDOW_TITLE_RGX = ".*Window name.*"
 
