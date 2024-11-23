@@ -8,12 +8,18 @@
 
 Enter needed values to only-gui legacy app with python
 
+## Installation
+
+2. Clone the repo
+   ```sh
+   git clone https://github.com/eenzamese/auto.git
+   ```
 
 ## Usage
 
 Clone the repo
    ```sh
-   git clone https://github.com/eenzamese/auto.git
+   python3 auto/auto.py
    ```
 <!-- LICENSE -->
 
