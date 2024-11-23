@@ -12,6 +12,7 @@ import pyautogui # type: ignore # pylint: disable=import-error
 APP_TMT = 60
 INPUT = ""
 SEARCH_TMT = 3
+WINDOW_TITLE_RGX = ".*Window name.*"
 
 # logging parameters
 LOG_START_TIME = re.sub(r"\W+", "_", str(time.ctime()))
@@ -72,7 +73,7 @@ class WindowMgr:
 w = WindowMgr()
 while True:
     try:
-        w.find_window_wildcard(".*Window name.*")
+        w.find_window_wildcard(WINDOW_TITLE_RGX)
         w.set_foreground()
         time.sleep(TMT)
         pyautogui.write(INPUT)
