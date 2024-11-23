@@ -5,22 +5,22 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="2uphr0wjDu7WBqX3Uwe7-1" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="1" vertex="1">
-          <mxGeometry x="60" y="290" width="180" height="120" as="geometry" />
+          <mxGeometry x="60" y="320" width="180" height="120" as="geometry" />
         </mxCell>
         <mxCell id="2uphr0wjDu7WBqX3Uwe7-7" value="Firefox window" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="60" y="290" width="100" height="20" as="geometry" />
+          <mxGeometry x="60" y="320" width="100" height="20" as="geometry" />
         </mxCell>
         <mxCell id="2uphr0wjDu7WBqX3Uwe7-11" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="1" vertex="1">
-          <mxGeometry x="80" y="320" width="180" height="120" as="geometry" />
+          <mxGeometry x="80" y="350" width="180" height="120" as="geometry" />
         </mxCell>
         <mxCell id="2uphr0wjDu7WBqX3Uwe7-10" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" parent="1" vertex="1">
-          <mxGeometry x="100" y="350" width="180" height="120" as="geometry" />
+          <mxGeometry x="100" y="380" width="180" height="120" as="geometry" />
         </mxCell>
         <mxCell id="2uphr0wjDu7WBqX3Uwe7-8" value="MS Word window" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="80" y="320" width="110" height="20" as="geometry" />
+          <mxGeometry x="80" y="350" width="110" height="20" as="geometry" />
         </mxCell>
         <mxCell id="2uphr0wjDu7WBqX3Uwe7-9" value="Calc window" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="100" y="350" width="100" height="20" as="geometry" />
+          <mxGeometry x="100" y="380" width="100" height="20" as="geometry" />
         </mxCell>
         <mxCell id="2uphr0wjDu7WBqX3Uwe7-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.014;entryY=0.3;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="2uphr0wjDu7WBqX3Uwe7-16" target="2uphr0wjDu7WBqX3Uwe7-21" edge="1">
           <mxGeometry relative="1" as="geometry">
