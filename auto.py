@@ -4,7 +4,6 @@ import re
 import sys
 import logging
 import pathlib
-import platform
 from os import sep
 from os.path import dirname
 import pyautogui # type: ignore # pylint: disable=import-error
@@ -37,14 +36,13 @@ LOG_FILENAME = f'{app_path}{sep}{app_name}_{LOG_START_TIME}.log'
 log_handlers = [logging.StreamHandler()]
 
 if APP_RUNMODE == 'PROD':
-    log_handlers = log_handlers.append(logging.FileHandler(LOG_FILENAME))
+    log_handlers.append(logging.FileHandler(LOG_FILENAME))
 
 logger = logging.getLogger(APP_RUNMODE)
 logging.basicConfig(format=LOG_FMT_STRING,
                     datefmt='%d.%m.%Y %H:%M:%S',
                     level=logging.INFO, # NOTSET/DEBUG/INFO/WARNING/ERROR/CRITICAL
-                    handlers=[logging.FileHandler(LOG_FILENAME),
-                              logging.StreamHandler()])
+                    handlers=log_handlers)
 
 
 # windows processing class
