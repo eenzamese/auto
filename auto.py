@@ -80,7 +80,7 @@ while True:
     try:
         w.find_window_wildcard(WINDOW_TITLE_RGX)
         w.set_foreground()
-        time.sleep(TMT)
+        time.sleep(SEARCH_TMT)
         pyautogui.write(INPUT)
         pyautogui.press('enter')
         sys.exit()
