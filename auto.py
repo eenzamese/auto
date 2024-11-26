@@ -2,6 +2,7 @@
 import time
 import re
 import sys
+import json
 import logging
 import pathlib
 from os import sep
@@ -10,10 +11,17 @@ import pyautogui # type: ignore # pylint: disable=import-error
 import win32gui # type: ignore # pylint: disable=import-error
 
 
-# inputs
-WINDOW_TITLE_RGX = ".*Window name.*"
-INPUT = "some input string"
+try:
+    with open('auto.config', 'r', encoding='UTF-8') as file:
+        conf_data = json.load(file)
+except Exception: # pylint: disable=broad-exception-caught
+    sys.exit('Config problems')
 
+# inputs
+WINDOW_TITLE_CONTENT = conf_data['WINDOW_TITLE_CONTENT']
+INPUT = conf_data['INPUT']
+
+WINDOW_TITLE_RGX = f".*{WINDOW_TITLE_CONTENT}.*"
 SEARCH_TMT = 3
 APP_TMT = 60
 
