@@ -7,7 +7,7 @@ import logging
 import pathlib
 from os import sep
 from os.path import dirname
-import pyautogui # type: ignore # pylint: disable=import-error
+import pyautogui # pylint: disable=import-error
 import win32gui # type: ignore # pylint: disable=import-error
 
 
