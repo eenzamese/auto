@@ -4,15 +4,16 @@ import re
 import sys
 import logging
 import pathlib
+import platform
 from os import sep
 from os.path import dirname
-import win32gui # type: ignore # pylint: disable=import-error
 import pyautogui # type: ignore # pylint: disable=import-error
+import win32gui # type: ignore # pylint: disable=import-error
+
 
 # inputs
 WINDOW_TITLE_RGX = ".*Window name.*"
 INPUT = "some input string"
-
 
 SEARCH_TMT = 3
 APP_TMT = 60
