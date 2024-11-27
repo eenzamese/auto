@@ -2,8 +2,6 @@ name: "Make installer action"
 on:
   push:
     branches: ["main"]
-    tags:
-      - "v*.*.*"
 
 jobs:
   pyinstaller-build:
@@ -24,3 +22,4 @@ jobs:
         uses: actions/checkout@v4
       - name: Release
         uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
