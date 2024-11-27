@@ -17,6 +17,7 @@ jobs:
           options: --onefile
   build:
     name: Create Release
+    permissions: write-all
     runs-on: windows-latest
     steps:
       - name: Checkout code
