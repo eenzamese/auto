@@ -1,3 +1,2 @@
-pyautogui
-win32gui
 pywin32
+pyautogui
