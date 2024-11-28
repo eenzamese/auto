@@ -13,6 +13,8 @@ import win32gui # type: ignore # pylint: disable=import-error
 
 try:
     with open('auto.config', 'r', encoding="866") as file:
+        file_content = file.read()
+        print(file_content)
         conf_data = json.load(file)
 except Exception as ex: # pylint: disable=broad-exception-caught
     print(str(ex))
