@@ -20,5 +20,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: foo-${{ github.run_id }}-${{ github.run_attempt }}
-          release_name: bar-${{ github.run_id }}-${{ github.run_attempt }}
+          name: bar-${{ github.run_id }}-${{ github.run_attempt }}
           files: ./dist/auto.exe|auto.config
