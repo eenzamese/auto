@@ -12,7 +12,7 @@ import win32gui # type: ignore # pylint: disable=import-error
 
 
 try:
-    with open('auto.config', 'r', encoding="866") as file:
+    with open('auto.config', 'r', encoding="UTF-8") as file:
         file_content = file.read()
         print(file_content)
         conf_data = json.load(file)
