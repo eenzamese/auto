@@ -14,7 +14,8 @@ import win32gui # type: ignore # pylint: disable=import-error
 try:
     with open('auto.config', 'r', encoding='UTF-8') as file:
         conf_data = json.load(file)
-except Exception: # pylint: disable=broad-exception-caught
+except Exception as ex: # pylint: disable=broad-exception-caught
+    print(str(ex))
     sys.exit('Config problems')
 
 # inputs
