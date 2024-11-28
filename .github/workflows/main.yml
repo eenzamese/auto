@@ -21,4 +21,4 @@ jobs:
         with:
           tag_name: foo-${{ github.run_id }}-${{ github.run_attempt }}
           release_name: bar-${{ github.run_id }}-${{ github.run_attempt }}
-          files: Release.txt
+          files: ./dist/auto.exe
