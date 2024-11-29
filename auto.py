@@ -11,13 +11,11 @@ from os.path import dirname
 import pyautogui # pylint: disable=import-error
 import win32gui # type: ignore # pylint: disable=import-error
 
+
 # timeouts
 SEARCH_TMT = 3
 APP_TMT = 60
 
-# logging parameters
-LOG_START_TIME = re.sub(r"\W+", "_", str(time.ctime()))
-LOG_FMT_STRING = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 
 # check environment
 if getattr(sys, 'frozen', False):
@@ -30,27 +28,10 @@ else:
     app_name = pathlib.Path(__file__).stem
     APP_RUNMODE = 'TEST'
 
-CONFIG_PATH = f'{app_path}{sep}auto.config'
-print(CONFIG_PATH)
-
-# inputs
-try:
-    with open(CONFIG_PATH, 'r', encoding="UTF-8") as file:
-        file_content = file.read()
-        print(file_content)
-        conf_data = json.loads(file_content)
-except Exception as ex: # pylint: disable=broad-exception-caught
-    print(str(ex))
-    print(traceback.format_exc())
-    sys.exit('Config problems')
-    
-
-# load configs
-WINDOW_TITLE_CONTENT = conf_data['WINDOW_TITLE_CONTENT']
-WINDOW_TITLE_RGX = f".*{WINDOW_TITLE_CONTENT}.*"
-INPUT = conf_data['INPUT']
 
 # logging settings
+LOG_START_TIME = re.sub(r"\W+", "_", str(time.ctime()))
+LOG_FMT_STRING = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 LOG_FILENAME = f'{app_path}{sep}{app_name}_{LOG_START_TIME}.log'
 log_handlers = [logging.StreamHandler()]
 
@@ -62,6 +43,26 @@ logging.basicConfig(format=LOG_FMT_STRING,
                     datefmt='%d.%m.%Y %H:%M:%S',
                     level=logging.INFO, # NOTSET/DEBUG/INFO/WARNING/ERROR/CRITICAL
                     handlers=log_handlers)
+
+CONFIG_PATH = f'{app_path}{sep}auto.config'
+logger.info('Configurations file is %s', CONFIG_PATH)
+
+
+# inputs
+try:
+    with open(CONFIG_PATH, 'r', encoding="UTF-8") as file:
+        file_content = file.read()
+        logger.info('Configurations content is %s', file_content)
+        conf_data = json.loads(file_content)
+except Exception as ex: # pylint: disable=broad-exception-caught
+    logger.critical('Config problems with exception %s', str(ex))
+    sys.exit('Config problems')
+    
+
+# load configs
+WINDOW_TITLE_CONTENT = conf_data['WINDOW_TITLE_CONTENT']
+WINDOW_TITLE_RGX = f".*{WINDOW_TITLE_CONTENT}.*"
+INPUT = conf_data['INPUT']
 
 
 # windows processing class
