@@ -29,10 +29,12 @@ else:
     app_name = pathlib.Path(__file__).stem
     APP_RUNMODE = 'TEST'
 
+CONFIG_PATH = f'{app_path}{os.sep}auto.config'
+print(CONFIG_PATH)
 
 # inputs
 try:
-    with open(f'{app_path}{os.sep}auto.config', 'r', encoding="UTF-8") as file:
+    with open(CONFIG_PATH, 'r', encoding="UTF-8") as file:
         file_content = file.read()
         print(file_content)
         conf_data = json.load(file)
@@ -40,11 +42,12 @@ except Exception as ex: # pylint: disable=broad-exception-caught
     print(str(ex))
     sys.exit('Config problems')
 
-
+# load configs
 WINDOW_TITLE_CONTENT = conf_data['WINDOW_TITLE_CONTENT']
 WINDOW_TITLE_RGX = f".*{WINDOW_TITLE_CONTENT}.*"
 INPUT = conf_data['INPUT']
 
+# logging settings
 LOG_FILENAME = f'{app_path}{sep}{app_name}_{LOG_START_TIME}.log'
 log_handlers = [logging.StreamHandler()]
 
@@ -86,6 +89,7 @@ class WindowMgr:
         win32gui.SetForegroundWindow(self._handle)
 
 
+# run
 w = WindowMgr()
 while True:
     try:
