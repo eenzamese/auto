@@ -10,11 +10,14 @@ from os.path import dirname
 import pyautogui # pylint: disable=import-error
 import win32gui # type: ignore # pylint: disable=import-error
 
-
+# timeouts
+SEARCH_TMT = 3
+APP_TMT = 60
 
 # logging parameters
 LOG_START_TIME = re.sub(r"\W+", "_", str(time.ctime()))
 LOG_FMT_STRING = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+
 
 if getattr(sys, 'frozen', False):
     app_path = dirname(sys.executable)
@@ -39,8 +42,6 @@ except Exception as ex: # pylint: disable=broad-exception-caught
 
 
 WINDOW_TITLE_RGX = f".*{WINDOW_TITLE_CONTENT}.*"
-SEARCH_TMT = 3
-APP_TMT = 60
 
 
 WINDOW_TITLE_CONTENT = conf_data['WINDOW_TITLE_CONTENT']
