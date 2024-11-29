@@ -5,6 +5,7 @@ import sys
 import json
 import logging
 import pathlib
+import traceback
 from os import sep
 from os.path import dirname
 import pyautogui # pylint: disable=import-error
@@ -40,7 +41,9 @@ try:
         conf_data = json.load(file)
 except Exception as ex: # pylint: disable=broad-exception-caught
     print(str(ex))
+    print(traceback.format_exc())
     sys.exit('Config problems')
+    
 
 # load configs
 WINDOW_TITLE_CONTENT = conf_data['WINDOW_TITLE_CONTENT']
