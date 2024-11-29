@@ -38,7 +38,7 @@ try:
     with open(CONFIG_PATH, 'r', encoding="UTF-8") as file:
         file_content = file.read()
         print(file_content)
-        conf_data = json.load(file)
+        conf_data = json.loads(file_content)
 except Exception as ex: # pylint: disable=broad-exception-caught
     print(str(ex))
     print(traceback.format_exc())
