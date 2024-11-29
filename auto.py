@@ -11,23 +11,6 @@ import pyautogui # pylint: disable=import-error
 import win32gui # type: ignore # pylint: disable=import-error
 
 
-try:
-    with open('auto.config', 'r', encoding="cp1251") as file:
-        file_content = file.read()
-        print(file_content)
-        conf_data = json.load(file)
-except Exception as ex: # pylint: disable=broad-exception-caught
-    print(str(ex))
-    sys.exit('Config problems')
-
-# inputs
-WINDOW_TITLE_CONTENT = conf_data['WINDOW_TITLE_CONTENT']
-INPUT = conf_data['INPUT']
-
-WINDOW_TITLE_RGX = f".*{WINDOW_TITLE_CONTENT}.*"
-SEARCH_TMT = 3
-APP_TMT = 60
-
 
 # logging parameters
 LOG_START_TIME = re.sub(r"\W+", "_", str(time.ctime()))
@@ -42,6 +25,26 @@ else:
     app_path = dirname(__file__)
     app_name = pathlib.Path(__file__).stem
     APP_RUNMODE = 'TEST'
+
+
+# inputs
+try:
+    with open(f'{app_path}{os.sep}auto.config', 'r', encoding="cp1251") as file:
+        file_content = file.read()
+        print(file_content)
+        conf_data = json.load(file)
+except Exception as ex: # pylint: disable=broad-exception-caught
+    print(str(ex))
+    sys.exit('Config problems')
+
+
+WINDOW_TITLE_RGX = f".*{WINDOW_TITLE_CONTENT}.*"
+SEARCH_TMT = 3
+APP_TMT = 60
+
+
+WINDOW_TITLE_CONTENT = conf_data['WINDOW_TITLE_CONTENT']
+INPUT = conf_data['INPUT']
 
 LOG_FILENAME = f'{app_path}{sep}{app_name}_{LOG_START_TIME}.log'
 log_handlers = [logging.StreamHandler()]
