@@ -18,7 +18,7 @@ APP_TMT = 60
 LOG_START_TIME = re.sub(r"\W+", "_", str(time.ctime()))
 LOG_FMT_STRING = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 
-
+# check environment
 if getattr(sys, 'frozen', False):
     app_path = dirname(sys.executable)
     app_name = pathlib.Path(sys.executable).stem
@@ -32,7 +32,7 @@ else:
 
 # inputs
 try:
-    with open(f'{app_path}{os.sep}auto.config', 'r', encoding="cp1251") as file:
+    with open(f'{app_path}{os.sep}auto.config', 'r', encoding="UTF-8") as file:
         file_content = file.read()
         print(file_content)
         conf_data = json.load(file)
@@ -41,10 +41,8 @@ except Exception as ex: # pylint: disable=broad-exception-caught
     sys.exit('Config problems')
 
 
-WINDOW_TITLE_RGX = f".*{WINDOW_TITLE_CONTENT}.*"
-
-
 WINDOW_TITLE_CONTENT = conf_data['WINDOW_TITLE_CONTENT']
+WINDOW_TITLE_RGX = f".*{WINDOW_TITLE_CONTENT}.*"
 INPUT = conf_data['INPUT']
 
 LOG_FILENAME = f'{app_path}{sep}{app_name}_{LOG_START_TIME}.log'
