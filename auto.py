@@ -44,6 +44,8 @@ logging.basicConfig(format=LOG_FMT_STRING,
                     level=logging.INFO, # NOTSET/DEBUG/INFO/WARNING/ERROR/CRITICAL
                     handlers=log_handlers)
 
+
+# load configuration
 CONFIG_PATH = f'{app_path}{sep}auto.config'
 logger.info('Configurations file is %s', CONFIG_PATH)
 
@@ -52,7 +54,7 @@ logger.info('Configurations file is %s', CONFIG_PATH)
 try:
     with open(CONFIG_PATH, 'r', encoding="UTF-8") as file:
         file_content = file.read()
-        logger.info('Configurations content is %s', file_content)
+        logger.debug('Configurations content is %s', file_content)
         conf_data = json.loads(file_content)
 except Exception as ex: # pylint: disable=broad-exception-caught
     logger.critical('Config problems with exception %s', str(ex))
