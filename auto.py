@@ -30,7 +30,7 @@ else:
     app_name = pathlib.Path(__file__).stem
     APP_RUNMODE = 'TEST'
 
-CONFIG_PATH = f'{app_path}{os.sep}auto.config'
+CONFIG_PATH = f'{app_path}{sep}auto.config'
 print(CONFIG_PATH)
 
 # inputs
