@@ -52,10 +52,12 @@ logger.info('Configurations file is %s', CONFIG_PATH)
 
 # inputs
 try:
+    logger.info('Loading config file')
     with open(CONFIG_PATH, 'r', encoding="UTF-8") as file:
         file_content = file.read()
         logger.debug('Configurations content is %s', file_content)
         conf_data = json.loads(file_content)
+    logger.info('Configuration file loads successfully')
 except Exception as ex: # pylint: disable=broad-exception-caught
     logger.critical('Config problems with exception %s', str(ex))
     sys.exit('Config problems')
@@ -99,11 +101,16 @@ class WindowMgr:
 w = WindowMgr()
 while True:
     try:
+        logger.info('Searching window')
         w.find_window_wildcard(WINDOW_TITLE_RGX)
+        logger.info('Setting window foreground')
         w.set_foreground()
         time.sleep(SEARCH_TMT)
+        logger.info('Entering data')
         pyautogui.write(INPUT)
+        logger.info('Input successfully added')
         pyautogui.press('enter')
+        logger.info('Close window')
         sys.exit()
     except Exception as ex: # pylint: disable=broad-exception-caught
         logger.warning('Window processing return exception - %s', str(ex))
