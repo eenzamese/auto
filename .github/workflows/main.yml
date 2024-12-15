@@ -7,4 +7,4 @@ jobs:
   build:
     permissions: write-all
     uses:
-      eenzamese/gate/.github/workflows/main.yml@main
+      eenzamese/pyinst_env/.github/workflows/main.yml@main
