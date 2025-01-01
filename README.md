@@ -1,6 +1,5 @@
 <div align="center"><h1 align="left">GUI auto input app</h1></div>
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
