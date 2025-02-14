@@ -26,7 +26,7 @@ if getattr(sys, 'frozen', False):
 else:
     app_path = dirname(__file__)
     app_name = pathlib.Path(__file__).stem
-    APP_RUNMODE = 'TEST'
+    APP_RUNMODE = 'PREPROD'
 
 
 # logging settings
@@ -65,6 +65,8 @@ except Exception as ex: # pylint: disable=broad-exception-caught
 
 # load configs
 WINDOW_TITLE_CONTENT = conf_data['WINDOW_TITLE_CONTENT']
+print(WINDOW_TITLE_CONTENT)
+sys.exit()
 WINDOW_TITLE_RGX = f".*{WINDOW_TITLE_CONTENT}.*"
 INPUT = conf_data['INPUT']
 
